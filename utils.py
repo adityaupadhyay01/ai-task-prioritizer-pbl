@@ -2,6 +2,7 @@ from datetime import datetime
 
 def importance_weight(level):
     level = level.lower()
+
     if level == "high":
         return 3
     elif level == "medium":
@@ -15,6 +16,7 @@ def importance_weight(level):
 def urgency_score(deadline_str):
     today = datetime.today().date()
     deadline = datetime.strptime(deadline_str, "%Y-%m-%d").date()
+
     days_left = (deadline - today).days
 
     if days_left <= 2:

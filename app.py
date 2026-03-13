@@ -1,22 +1,33 @@
-from utility import importance_weight, urgency_score, priority_score
+from flask import Flask, render_template, request
+from utils import importance_weight, urgency_score, priority_score
 
-tasks = []
+app = Flask(__name__)
 
-n = int(input("How many tasks? "))
+@app.route("/", methods=["GET","POST"])
+def index():
 
-for _ in range(n):
-    name = input("\nTask name: ")
-    deadline = input("Deadline (YYYY-MM-DD): ")
-    importance = input("Importance (High/Medium/Low): ")
+    if request.method == "POST":
 
-    iw = importance_weight(importance)
-    us = urgency_score(deadline)
-    score = priority_score(iw, us)
+        tasks = request.form.getlist("task[]")
+        deadlines = request.form.getlist("deadline[]")
+        importances = request.form.getlist("importance[]")
 
-    tasks.append((name, score))
+        results = []
 
-tasks.sort(key=lambda x: x[1], reverse=True)
+        for i in range(len(tasks)):
 
-print("\n--- Priority Order ---")
-for i, t in enumerate(tasks, start=1):
-    print(f"{i}. {t[0]} — Score {t[1]}")
+            iw = importance_weight(importances[i])
+            us = urgency_score(deadlines[i])
+            score = priority_score(iw, us)
+
+            results.append((tasks[i], score))
+
+        results.sort(key=lambda x: x[1], reverse=True)
+
+        return render_template("result.html", results=results)
+
+    return render_template("index.html")
+
+
+if __name__ == "__main__":
+    app.run(debug=True)

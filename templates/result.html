@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Result</title>
+<title>Priority Results</title>
+<link rel="stylesheet" href="/static/style.css">
 </head>
 
 <body>
-<h2>Priority Result</h2>
-<p>Task: {{ task }}</p>
 
-<p>Priority Score: {{ score }}</p>
+<div class="container">
+
+<h1>Priority Ranking</h1>
+
+<table border="1" width="100%">
+<tr>
+<th>Rank</th>
+<th>Task</th>
+<th>Score</th>
+</tr>
+
+{% for task, score in results %}
+<tr>
+<td>{{ loop.index }}</td>
+<td>{{ task }}</td>
+<td>{{ score }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
 <br>
-<a href="/">Check Another Task</a>
+
+<a href="/">Add More Tasks</a>
+
+</div>
+
 </body>
 </html>
