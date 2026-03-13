@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from utils import importance_weight, urgency_score, priority_score
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -15,6 +16,14 @@ def index():
         results = []
 
         for i in range(len(tasks)):
+
+            today = datetime.today().date()
+            deadline = datetime.strptime(deadlines[i], "%Y-%m-%d").date()
+
+            # Past date validation
+            if deadline < today:
+                results.append((tasks[i], 0, "Invalid deadline (past date)"))
+                continue
 
             iw = importance_weight(importances[i])
             us = urgency_score(deadlines[i])
