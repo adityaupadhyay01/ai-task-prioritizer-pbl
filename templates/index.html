@@ -3,26 +3,43 @@
 <head>
 <title>AI Task Prioritizer</title>
 <link rel="stylesheet" href="/static/style.css">
+
 <script>
-function addTask() {
+
+function generateTasks(){
+
+    const num = document.getElementById("taskCount").value;
     const container = document.getElementById("tasks");
 
-    const row = document.createElement("div");
-    row.className = "task-row";
+    const today = new Date().toISOString().split("T")[0];
 
-    row.innerHTML = `
-        <input type="text" name="task[]" placeholder="Task Name" required>
-        <input type="date" name="deadline[]" required>
-        <select name="importance[]">
-            <option value="High">High</option>
-            <option value="Medium">Medium</option>
-            <option value="Low">Low</option>
-        </select>
-    `;
+    container.innerHTML = "";
 
-    container.appendChild(row);
+    for(let i=0;i<num;i++){
+
+        const row = document.createElement("div");
+
+        row.className = "task-row";
+
+        row.innerHTML = `
+            <input type="text" name="task[]" placeholder="Task Name" required>
+
+            <input type="date" name="deadline[]" min="${today}" required>
+
+            <select name="importance[]">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+        `;
+
+        container.appendChild(row);
+    }
+
 }
+
 </script>
+
 </head>
 
 <body>
@@ -31,33 +48,22 @@ function addTask() {
 
 <h1>AI Task Prioritizer</h1>
 
-<form method="POST">
+<label>How many tasks?</label>
 
-<div id="tasks">
+<input type="number" id="taskCount" min="1">
 
-<div class="task-row">
-<input type="text" name="task[]" placeholder="Task Name" required>
-<input type="date" name="deadline[]" required>
-<select name="importance[]">
-<option value="High">High</option>
-<option value="Medium">Medium</option>
-<option value="Low">Low</option>
-</select>
-</div>
-
-</div>
-
-<br>
-
-<button type="button" onclick="addTask()">+ Add Task</button>
+<button type="button" onclick="generateTasks()">Create Tasks</button>
 
 <br><br>
 
+<form method="POST">
+
+<div id="tasks"></div>
+
+<br>
+
 <button type="submit">Calculate Priority</button>
-
 </form>
-
 </div>
-
 </body>
 </html>

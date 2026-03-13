@@ -3,7 +3,7 @@ from utils import importance_weight, urgency_score, priority_score
 
 app = Flask(__name__)
 
-@app.route("/", methods=["GET","POST"])
+@app.route("/", methods=["GET", "POST"])
 def index():
 
     if request.method == "POST":
@@ -20,8 +20,19 @@ def index():
             us = urgency_score(deadlines[i])
             score = priority_score(iw, us)
 
-            results.append((tasks[i], score))
+            # Smart suggestion logic
+            if iw == 3 and us == 3:
+                reason = "Very urgent and highly important"
+            elif iw == 3:
+                reason = "High importance task"
+            elif us == 3:
+                reason = "Deadline is very close"
+            else:
+                reason = "Lower urgency task"
 
+            results.append((tasks[i], score, reason))
+
+        # Sort by score
         results.sort(key=lambda x: x[1], reverse=True)
 
         return render_template("result.html", results=results)

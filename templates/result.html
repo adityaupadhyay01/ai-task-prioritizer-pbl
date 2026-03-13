@@ -9,21 +9,25 @@
 
 <div class="container">
 
-<h1>Priority Ranking</h1>
+<h1>AI Suggested Task Order</h1>
 
 <table border="1" width="100%">
 <tr>
 <th>Rank</th>
 <th>Task</th>
 <th>Score</th>
+<th>Reason</th>
 </tr>
 
-{% for task, score in results %}
+{% for task, score, reason in results %}
+
 <tr>
 <td>{{ loop.index }}</td>
 <td>{{ task }}</td>
 <td>{{ score }}</td>
+<td>{{ reason }}</td>
 </tr>
+
 {% endfor %}
 
 </table>
