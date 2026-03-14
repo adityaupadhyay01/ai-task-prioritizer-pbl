@@ -3,43 +3,6 @@
 <head>
 <title>AI Task Prioritizer</title>
 <link rel="stylesheet" href="/static/style.css">
-
-<script>
-
-function generateTasks(){
-
-    const num = document.getElementById("taskCount").value;
-    const container = document.getElementById("tasks");
-
-    const today = new Date().toISOString().split("T")[0];
-
-    container.innerHTML = "";
-
-    for(let i=0;i<num;i++){
-
-        const row = document.createElement("div");
-
-        row.className = "task-row";
-
-        row.innerHTML = `
-            <input type="text" name="task[]" placeholder="Task Name" required>
-
-            <input type="date" name="deadline[]" min="${today}" required>
-
-            <select name="importance[]">
-                <option value="High">High</option>
-                <option value="Medium">Medium</option>
-                <option value="Low">Low</option>
-            </select>
-        `;
-
-        container.appendChild(row);
-    }
-
-}
-
-</script>
-
 </head>
 
 <body>
@@ -52,7 +15,7 @@ function generateTasks(){
 
 <input type="number" id="taskCount" min="1">
 
-<button type="button" onclick="generateTasks()">Create Tasks</button>
+<button type="button" onclick="generateTasks()">Add Tasks</button>
 
 <br><br>
 
@@ -67,6 +30,8 @@ function generateTasks(){
 </form>
 
 </div>
+
+<script src="/static/script.js"></script>
 
 </body>
 </html>

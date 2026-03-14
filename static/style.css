@@ -21,6 +21,14 @@ body{
     margin-bottom:10px;
 }
 
+.task-row button{
+    background:#ff8b39;
+    color:white;
+    border:none;
+    padding:6px 10px;
+    cursor:pointer;
+}
+
 input, select{
     padding:8px;
 }
