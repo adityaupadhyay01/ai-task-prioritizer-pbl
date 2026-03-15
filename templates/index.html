@@ -1,33 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <title>AI Task Prioritizer</title>
+
 <link rel="stylesheet" href="/static/style.css">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
-<div class="container">
+<div class="app-container">
 
+<header class="header">
 <h1>AI Task Prioritizer</h1>
+<p>Organize and prioritize your tasks intelligently</p>
+</header>
 
-<label>How many tasks?</label>
+<div class="card">
 
-<input type="number" id="taskCount" min="1">
+<label class="label">How many tasks?</label>
 
-<button type="button" onclick="generateTasks()">Add Tasks</button>
-
-<br><br>
+<div class="input-group">
+<input type="number" id="taskCount" min="1" placeholder="Enter number of tasks">
+<button onclick="generateTasks()" class="btn-primary">Generate Tasks</button>
+</div>
 
 <form method="POST">
 
-<div id="tasks"></div>
+<div id="tasks" class="task-grid"></div>
 
-<br>
-
-<button type="submit">Calculate Priority</button>
+<div class="action">
+<button type="submit" class="btn-gradient">Calculate Priority</button>
+</div>
 
 </form>
+
+</div>
 
 </div>
 
