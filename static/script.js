@@ -8,14 +8,11 @@ function generateTasks(){
     container.innerHTML = "";
 
     for(let i=0;i<num;i++){
-
         createTaskRow("", "", "Medium");
     }
 
 }
 
-
-// Create task row
 function createTaskRow(task, deadline, importance){
 
     const container = document.getElementById("tasks");
@@ -25,35 +22,49 @@ function createTaskRow(task, deadline, importance){
     row.className = "task-row";
 
     row.innerHTML = `
-        <input type="text" name="task[]" value="${task}" placeholder="Task Name" required>
 
-        <input type="date" name="deadline[]" value="${deadline}" min="${today}" required>
+        <input type="text"
+        name="task[]"
+        value="${task}"
+        placeholder="Task Name"
+        required>
+
+        <input type="date"
+        name="deadline[]"
+        value="${deadline}"
+        min="${today}"
+        class="date-input"
+        required>
 
         <select name="importance[]">
+
             <option ${importance==="High"?"selected":""}>High</option>
             <option ${importance==="Medium"?"selected":""}>Medium</option>
             <option ${importance==="Low"?"selected":""}>Low</option>
+
         </select>
 
-        <button type="button" onclick="deleteTask(this)">❌</button>
+        <button type="button"
+        class="delete-btn"
+        onclick="deleteTask(this)">
+        ✕
+        </button>
+
     `;
 
     container.appendChild(row);
 
 }
 
-
-// Delete task
 function deleteTask(button){
 
     const row = button.parentElement;
     row.remove();
 
     saveTasks();
+
 }
 
-
-// Save tasks in local storage
 function saveTasks(){
 
     const tasks = [];
@@ -69,10 +80,9 @@ function saveTasks(){
     });
 
     localStorage.setItem("tasks", JSON.stringify(tasks));
+
 }
 
-
-// Load tasks after refresh
 function loadTasks(){
 
     const stored = localStorage.getItem("tasks");
@@ -89,8 +99,6 @@ function loadTasks(){
 
 }
 
-
-// Auto save when typing
 document.addEventListener("input", function(e){
 
     if(e.target.closest(".task-row")){
@@ -99,6 +107,4 @@ document.addEventListener("input", function(e){
 
 });
 
-
-// Load tasks when page loads
 window.onload = loadTasks;

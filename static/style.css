@@ -166,3 +166,87 @@ margin-top:20px;
 text-decoration:none;
 color:#3b82f6;
 }
+
+/* Task row improvements */
+
+.task-row{
+
+display:flex;
+gap:12px;
+align-items:center;
+
+background:#020617;
+
+padding:12px;
+
+border-radius:12px;
+
+border:1px solid #1e293b;
+
+transition:all 0.2s ease;
+
+}
+
+.task-row:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 12px 30px rgba(0,0,0,0.5);
+
+}
+
+/* Date input styling */
+
+.date-input{
+
+color:white;
+
+background:#020617;
+
+border:1px solid #334155;
+
+border-radius:10px;
+
+padding:10px;
+
+}
+
+/* Make calendar icon visible in dark mode */
+
+.date-input::-webkit-calendar-picker-indicator{
+
+filter:invert(1);
+
+cursor:pointer;
+
+}
+
+/* Delete button */
+
+.delete-btn{
+
+background:#ef4444;
+
+border:none;
+
+color:white;
+
+padding:8px 12px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+font-size:14px;
+
+transition:all 0.2s ease;
+
+}
+
+.delete-btn:hover{
+
+background:#dc2626;
+
+transform:scale(1.05);
+
+}
