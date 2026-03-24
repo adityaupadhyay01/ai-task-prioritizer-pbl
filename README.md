@@ -77,13 +77,13 @@ The application prevents invalid inputs:
 
 ---
 
-### 💾 Persistent Tasks (Local Storage)
+### Persistent Tasks (Local Storage)
 
 Tasks are automatically stored in the browser using **localStorage**, allowing them to remain visible even after refreshing the page.
 
 ---
 
-### ❌ Task Management
+### Task Management
 
 Users can easily:
 
@@ -93,7 +93,7 @@ Users can easily:
 
 ---
 
-# 🧠 Priority Calculation Logic
+# Priority Calculation Logic
 
 The system calculates a **priority score** using:
 
@@ -128,7 +128,7 @@ Tasks are then sorted in **descending order of priority score**.
 
 ---
 
-# 🏗 Project Structure
+# Project Structure
 
 ```
 AI-Task-Prioritizer
@@ -150,7 +150,7 @@ AI-Task-Prioritizer
 
 ---
 
-# ⚙️ Technologies Used
+# Technologies Used
 
 ### Backend
 
@@ -171,9 +171,9 @@ AI-Task-Prioritizer
 
 ---
 
-# ▶️ Installation & Setup
+# Installation & Setup
 
-### 1️⃣ Clone the repository
+### Step-1:- Clone the repository
 
 ```
 git clone https://github.com/yourusername/ai-task-prioritizer.git
@@ -182,7 +182,7 @@ cd ai-task-prioritizer
 
 ---
 
-### 2️⃣ Install dependencies
+### Step-2:- Install dependencies
 
 ```
 pip install flask
@@ -196,7 +196,7 @@ pip install -r requirements.txt
 
 ---
 
-### 3️⃣ Run the application
+### Step-3:- Run the application
 
 ```
 python app.py
@@ -204,7 +204,7 @@ python app.py
 
 ---
 
-### 4️⃣ Open in browser
+### Step-4:- Open in browser
 
 ```
 http://127.0.0.1:5000
@@ -212,7 +212,7 @@ http://127.0.0.1:5000
 
 ---
 
-# 💡 Example Usage
+# Example Usage
 
 User inputs:
 
@@ -231,7 +231,7 @@ Reason: Very urgent and highly important
 
 ---
 
-# 🔮 Future Improvements
+# Future Improvements
 
 Potential upgrades for production-level systems:
 
@@ -246,12 +246,12 @@ Potential upgrades for production-level systems:
 
 ---
 
-# 🎯 Project Objective
+# Project Objective
 
 The goal of this project is to demonstrate how **rule-based AI decision logic** can be combined with **modern web development technologies** to build an intelligent productivity tool.
 
 ---
 
-# 📄 License
+# License
 
 This project is available for **educational and learning purposes**.
