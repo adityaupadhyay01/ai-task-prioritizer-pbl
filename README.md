@@ -22,9 +22,9 @@ Experience the AI-powered task prioritization system directly in your browser wi
 
 ---
 
-# ✨ Key Features
+# Key Features
 
-### 🧠 Intelligent Task Prioritization
+### Intelligent Task Prioritization
 
 Automatically calculates a **priority score** for tasks based on:
 
@@ -35,7 +35,7 @@ Tasks are sorted in **optimal execution order**.
 
 ---
 
-### 🤖 Smart AI-Like Suggestions
+### Smart AI-Like Suggestions
 
 Each task includes a reasoning message such as:
 
@@ -47,13 +47,13 @@ This makes the system behave like a **decision-support assistant**.
 
 ---
 
-### 🧾 Dynamic Task Generation
+### Dynamic Task Generation
 
 Users can specify **how many tasks they want to add**, and the system dynamically generates input cards for each task.
 
 ---
 
-### 🎨 Premium SaaS-Style Interface
+### Premium SaaS-Style Interface
 
 The UI is designed to look like a **modern startup product**.
 
