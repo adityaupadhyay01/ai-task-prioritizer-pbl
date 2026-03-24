@@ -1,4 +1,4 @@
-# 🚀 AI Task Prioritizer
+# AI Task Prioritizer
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue?style=flat-square)
 ![Flask](https://img.shields.io/badge/Flask-Web%20Framework-black?style=flat-square)
@@ -12,11 +12,11 @@ The project combines **Python (Flask) backend logic** with a **modern dark dashb
 
 ---
 
-# 🌐 Live Demo
+# Live Demo
 
 Try the application live:
 
-🔗 https://ai-task-prioritizer-pbl.onrender.com/
+Link:- https://ai-task-prioritizer-pbl.onrender.com/
 
 Experience the AI-powered task prioritization system directly in your browser without installing anything.
 
